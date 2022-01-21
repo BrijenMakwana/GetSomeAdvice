@@ -27,11 +27,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     shadowOpacity: 0.5,
-    elevation: 0.5,
+    elevation: 10,
     shadowColor: "#000",
     shadowOffset:{
-      height:7,
-      width:7
+      height:10,
+      width:10
     },
     borderRadius: 35,
     padding: 15,

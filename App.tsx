@@ -3,26 +3,40 @@ import { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import AdviceItem from './Components/AdviceItem';
 import UIButton from './Components/UIButton';
+import axios from 'axios';
 
 export default function App() {
 
   const [advice,setAdvice] = useState("");
 
-  const getAdvice = async() => {
-    fetch('https://api.adviceslip.com/advice')
-    .then((response) => response.json())
-    .then((json) => {
-      setAdvice(json.slip.advice);
-      
-    })
-      .catch((error) => {
-        console.log(error);
-      });
+  // generate random id
+  const getRandomId = (min: number, max: number) =>{
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return (Math.floor(Math.random() * (max - min + 1)) + min).toString();
+}
+  // get advice by calling api 
+  const getAdvice = () => {
+
+    axios.get("http://api.adviceslip.com/advice/" + getRandomId(1,200)).
+          then((response) => {
+          setAdvice(response.data.slip.advice);
+    });
+
+    
+    
   };
+ 
 
   useEffect(()=>{
-    getAdvice();
+    
+      getAdvice();
+    
+    
   },[])
+
+
+ 
 
   return (
     <View style={styles.container}>
@@ -36,7 +50,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FAEEE7',
+    backgroundColor: '#24A19C',
     alignItems: 'center',
     justifyContent: 'center',
   }
