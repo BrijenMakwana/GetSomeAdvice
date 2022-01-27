@@ -5,3 +5,5 @@ Play Store Link: https://play.google.com/store/apps/details?id=com.brijenmakwana
 
 This app fetch the data from Advice Slip API: https://api.adviceslip.com
 
+This app is developed with React Native Expo.
+
