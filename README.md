@@ -1,4 +1,4 @@
-# GetSomeAdvice
+# Get Some Advice
 
 <img src="https://github.com/BrijenMakwana/GetSomeAdvice/blob/main/assets/icon.png" width="200" height="200" style="border-radius:50px;">
 
